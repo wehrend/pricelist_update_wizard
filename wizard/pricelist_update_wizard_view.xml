@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="view_pricelist_update_wizard_form" model="ir.ui.view">
-        <name>product.pricelist.update.wizard.form</name>
-        <model>product.pricelist.update.wizard</model>
-        <arch type="xml">
-            <form string="Pricelist adaption">
-                <group>
-                    <field name="update_type"/>
-                    <field name="value"/>
-                </group>
-                <footer>
-                    <button string="Pricelist Update" name="action_apply_pricelist_update" type="object" class="btn-primary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
-                </footer>
+        <field name="name">product.pricelist.update.wizard.form</field>
+        <field name="model">product.pricelist.update.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Pricelist Update">
+                <sheet> <group>
+                        <field name="update_type"/>
+                        <field name="value"/>
+                    </group>
+                    <footer>
+                        <button string="Update Prices" name="action_apply_pricelist_update" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
             </form>
-        </arch>
+        </field>
     </record>
 
     <record id="action_product_pricelist_update_wizard" model="ir.actions.act_window">
-        <name>Adjust prices in list</name>
-        <res_model>product.pricelist.update.wizard</res_model>
-        <view_mode>form</view_mode>
-        <target>new</target>
-        <field name="binding_model_id" ref="product.model_product_pricelist"/>
-        <field name="binding_view_types">list,form</field>
-    </record>
+    <field name="name">Bulk Update Prices</field>
+    <field name="res_model">product.pricelist.update.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="binding_model_id" ref="product.model_product_pricelist"/>
+    <field name="binding_view_types">list,form</field>
+</record>
 </odoo>
