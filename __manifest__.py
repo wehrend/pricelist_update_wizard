@@ -20,7 +20,7 @@ by a percentage or a fixed amount in bulk.
         'sale',
     ],
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'wizard/pricelist_update_wizard_view.xml',
     ],
     'demo': [],
